@@ -15,7 +15,7 @@ public class QuestionAChoixMultipleTest {
     @Before
     public void setUp() throws Exception {
 
-        uneQuestion = new QuestionAChoixMultiple("un énoncé", new ArrayList<Integer>(Arrays.asList(2,3)));
+        uneQuestion = new QuestionAChoixMultiple("un énoncé", new ArrayList<Integer>(Arrays.asList(2,3)), 3);
 
     }
 
@@ -41,6 +41,6 @@ public class QuestionAChoixMultipleTest {
         indiceEtudiant = 1;
         resScore = uneQuestion.getScoreForIndice(indiceEtudiant);
         // then : le score obtenu est 0
-        assertEquals(new Float(0f), resScore);
+        assertEquals(new Float(-100), resScore);
     }
 }
