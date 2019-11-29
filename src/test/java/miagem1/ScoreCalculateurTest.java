@@ -20,6 +20,8 @@ public class ScoreCalculateurTest {
         calculateur = new ScoreCalculateur();
     }
 
+    // ERREUR DE COMMIT ! Précédent commit fix #2 correspond au fix #3
+
     @Test
     public void testCalculeScore() {
         //when : un étudiant fourni une liste d'indice correspondant à des bonnes réponses
