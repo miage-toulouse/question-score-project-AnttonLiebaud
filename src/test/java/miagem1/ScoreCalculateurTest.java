@@ -53,7 +53,30 @@ public class ScoreCalculateurTest {
         indiceEtudiant.add(3);
         indiceEtudiant.add(4);
         resScore = calculateur.calculeScore(indiceEtudiant,uneQuestion);
-        // then : le score obtenu est 33,33
-        assertEquals(new Float(100f/(float)3), resScore);
+        // then : le score obtenu est 0
+        assertEquals(new Float(0f), resScore);
+
+        // when : un Etudiant fourni une liste d'indice contenant toutes les réponses possibles
+        indiceEtudiant.clear();
+        indiceEtudiant.add(1);
+        indiceEtudiant.add(2);
+        indiceEtudiant.add(3);
+        indiceEtudiant.add(4);
+        indiceEtudiant.add(5);
+        resScore = calculateur.calculeScore(indiceEtudiant,uneQuestion);
+        // then : le score obtenu est 0
+        assertEquals(new Float(0), resScore);
+
+        // when : un Etudiant fourni une liste d'indice contenant 1,2,3
+        indiceEtudiant.clear();
+        indiceEtudiant.add(1);
+        indiceEtudiant.add(2);
+        indiceEtudiant.add(3);
+
+        resScore = calculateur.calculeScore(indiceEtudiant,uneQuestion);
+        // then : le score obtenu est environ 16,66
+        assertEquals(new Float((100f/(float)3)*2 - 50f), resScore);
+
+
     }
 }
